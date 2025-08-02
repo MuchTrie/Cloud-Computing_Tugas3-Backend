@@ -1,0 +1,81 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Budi Santoso",
+      "email": "budi.santoso@email.com",
+      "age": 25,
+      "city": "Jakarta",
+      "pekerjaan": "Software Engineer",
+      "hobi": "Bermain musik"
+    },
+    {
+      "id": 2,
+      "name": "Siti Nurhaliza",
+      "email": "siti.nurhaliza@email.com",
+      "age": 30,
+      "city": "Bandung",
+      "pekerjaan": "Designer Grafis",
+      "hobi": "Melukis"
+    },
+    {
+      "id": 3,
+      "name": "Ahmad Fauzi",
+      "email": "ahmad.fauzi@email.com",
+      "age": 28,
+      "city": "Surabaya",
+      "pekerjaan": "Data Analyst",
+      "hobi": "Fotografi"
+    },
+    {
+      "id": 4,
+      "name": "Dewi Sartika",
+      "email": "dewi.sartika@email.com",
+      "age": 32,
+      "city": "Yogyakarta",
+      "pekerjaan": "Marketing Manager",
+      "hobi": "Traveling"
+    },
+    {
+      "id": 5,
+      "name": "Rizki Pratama",
+      "email": "rizki.pratama@email.com",
+      "age": 27,
+      "city": "Medan",
+      "pekerjaan": "Frontend Developer",
+      "hobi": "Gaming"
+    },
+    {
+      "id": 6,
+      "name": "Maya Sari",
+      "email": "maya.sari@email.com",
+      "age": 29,
+      "city": "Makassar",
+      "pekerjaan": "Product Manager",
+      "hobi": "Membaca"
+    },
+    {
+      "id": 7,
+      "name": "Andi Wijaya",
+      "email": "andi.wijaya@email.com",
+      "age": 26,
+      "city": "Semarang",
+      "pekerjaan": "Backend Developer",
+      "hobi": "Olahraga"
+    },
+    {
+      "id": 8,
+      "name": "Rina Mulyani",
+      "email": "rina.mulyani@email.com",
+      "age": 31,
+      "city": "Palembang",
+      "pekerjaan": "HR Manager",
+      "hobi": "Memasak"
+    }
+  ],
+  "meta": {
+    "total_users": 8,
+    "last_updated": "2025-08-02",
+    "data_source": "Indonesia Sample Data"
+  }
+}
