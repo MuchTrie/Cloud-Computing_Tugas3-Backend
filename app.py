@@ -4,7 +4,9 @@ import json
 import os
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+
+# Configure CORS with specific settings for production
+CORS(app, origins=['*'], allow_headers=['Content-Type', 'Authorization'], methods=['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'])
 
 # Path to data file
 DATA_FILE = os.path.join(os.path.dirname(__file__), 'data.json')
@@ -225,9 +227,31 @@ def health_check():
     return jsonify({
         "status": "healthy",
         "service": "Flask REST API",
-        "timestamp": "2025-08-03"
+        "timestamp": "2025-08-03",
+        "server_ip": "13.210.70.244"
     })
 
+# Add error handlers
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({
+        "status": "error",
+        "message": "Endpoint not found",
+        "code": 404
+    }), 404
+
+@app.errorhandler(500)
+def internal_error(error):
+    return jsonify({
+        "status": "error", 
+        "message": "Internal server error",
+        "code": 500
+    }), 500
+
 if __name__ == '__main__':
-    # For development
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # For production deployment on EC2
+    print("Starting Flask API server...")
+    print("Server will be available at: http://13.210.70.244:5000")
+    print("Health check: http://13.210.70.244:5000/health")
+    print("API endpoints: http://13.210.70.244:5000/api/users")
+    app.run(host='0.0.0.0', port=5000, debug=False)
