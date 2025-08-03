@@ -27,11 +27,8 @@ def home():
     return jsonify({
         "message": "Flask REST API Server - Tugas 3",
         "status": "running",
-        "backend_url": "http://13.210.70.244:5000",
         "available_endpoints": [
             "/api/users - Get all users",
-            "/api/users/<id> - Get user by ID", 
-            "/health - Health check"
         ]
     })
 
@@ -45,45 +42,6 @@ def get_all_users():
         "meta": data["meta"]
     })
 
-@app.route('/api/users/<int:user_id>', methods=['GET'])
-def get_user_by_id(user_id):
-    """Get user by ID"""
-    data = load_data()
-    user = next((u for u in data["users"] if u["id"] == user_id), None)
-    
-    if user:
-        return jsonify({
-            "status": "success",
-            "data": user
-        })
-    else:
-        return jsonify({
-            "status": "error",
-            "message": "User not found"
-        }), 404
-
-@app.route('/api/users/city/<string:city>', methods=['GET'])
-def get_users_by_city(city):
-    """Get users by city"""
-    data = load_data()
-    users = [u for u in data["users"] if u["city"].lower() == city.lower()]
-    
-    return jsonify({
-        "status": "success",
-        "data": users,
-        "count": len(users),
-        "filter": f"city = {city}"
-    })
-
-@app.route('/health', methods=['GET'])
-def health_check():
-    """Health check endpoint"""
-    return jsonify({
-        "status": "healthy",
-        "service": "Flask REST API - Tugas 3",
-        "backend_server": "13.210.70.244:5000",
-        "message": "Backend berjalan dengan baik"
-    })
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
