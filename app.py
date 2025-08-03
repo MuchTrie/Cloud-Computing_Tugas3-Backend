@@ -86,12 +86,4 @@ def health_check():
     })
 
 if __name__ == '__main__':
-    # Development mode untuk tugas
-    print("="*50)
-    print("🚀 TUGAS 3 - BACKEND FLASK API")
-    print("="*50)
-    print("Server akan berjalan di: http://13.210.70.244:5000")
-    print("Health check: http://13.210.70.244:5000/health")
-    print("API users: http://13.210.70.244:5000/api/users")
-    print("="*50)
     app.run(host='0.0.0.0', port=5000, debug=True)
