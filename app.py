@@ -35,7 +35,7 @@ def home():
         "message": "🇮🇩 Backend Flask API - Data Pengguna Indonesia",
         "status": "active",
         "server_info": {
-            "host": "10.0.2.252",
+            "host": "13.210.70.244",
             "port": 5000,
             "environment": "production"
         },
@@ -46,8 +46,8 @@ def home():
             "GET /api/users/<id>": "Get user by ID (1-8)"
         },
         "usage_examples": {
-            "all_users": "http://10.0.2.252:5000/api/users",
-            "user_by_id": "http://10.0.2.252:5000/api/users/1"
+            "all_users": "http://13.210.70.244:5000/api/users",
+            "user_by_id": "http://13.210.70.244:5000/api/users/1"
         }
     })
     response.headers.add('Access-Control-Allow-Origin', '*')
@@ -105,11 +105,12 @@ def handle_preflight():
 if __name__ == '__main__':
     print("🚀 Starting Flask Backend Server...")
     print(f"📊 Loaded {len(USERS)} users from data.json")
-    print("🌐 API tersedia di: http://10.0.2.252:5000")
+    print("🌐 API tersedia di: http://13.210.70.244:5000")
     print("📋 Endpoints:")
     print("   GET / - API Information")
     print("   GET /api/users - All users") 
     print("   GET /api/users/<id> - User by ID")
+    print("🔗 Frontend dapat akses via public IP")
     print("=" * 50)
     
     # Production configuration
